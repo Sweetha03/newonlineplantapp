@@ -1,0 +1,155 @@
+<div class="card text-center col-md-4 offset-md-4" style="background-color:  rgb(244, 221, 226);">
+    <table style="background-color: rgb(244, 221, 226); border: solid 2px;">
+    </table>
+
+    <form (ngSubmit)="onSubmit()" #SeedForm="ngForm">
+        <tr>
+            <div class="form-group">
+                <label>Seed Name</label>
+                <input type="text" [(ngModel)]="s.seedName" class="form-control" id="sname" name="sname"
+                    #seedName="ngModel" placeholder="Enter Seed Name" required pattern="[a-zA-Z]+">
+                <div *ngIf="seedName.invalid">
+                    <span style="color: red;" *ngIf="seedName.errors?.['required']">
+                        Seed Name is required
+                    </span>
+                    <span style="color: red;" *ngIf="seedName.errors?.['pattern']">
+                        Seed Name is not valid
+                    </span>
+
+                </div>
+            </div>
+        </tr>
+        <br>
+
+        <tr>
+            <td>
+                <div class="form-group">
+                    <label> Bloom Season </label>
+                    <select class="form-control" id="sbloomSeason" name="stypesOfSeeds" [(ngModel)]="s.bloomSeason">
+                        <option value="Summer"> Summer </option>
+                        <option value="Monsoon"> Monsoon </option>
+                        <option value="Winter"> Winter </option>
+                        <option value="Spring"> Spring </option>
+                    </select>
+                </div>
+            </td>
+        </tr>
+        <br>
+
+        <tr>
+            <td>
+                <div class="form-group">
+                    <label> Types Of Seeds </label>
+                    <select class="form-control" id="stypesOfSeeds" name="stypesOfSeeds" [(ngModel)]="s.typesOfSeeds">
+                        <option value="FruitSeed"> Fruit Seed </option>
+                        <option value="VegetableSeed"> Vegetable Seed </option>
+                        <option value="FlowerSeed"> Flower Seed </option>
+                        <option value="HerbSeed"> Herb Seed </option>
+                    </select>
+                </div>
+            </td>
+        </tr>
+        <br>
+
+        <tr>
+            <div class="form-group">
+                <label>Seed Stock</label>
+                <input type="text" [(ngModel)]="s.seedsStock" class="form-control" id="sseedsstock" name="sseedsstock"
+                    #seedsStock="ngModel" placeholder="Enter Seed Stock" required pattern="[0-9]+">
+                <div *ngIf="seedsStock.invalid">
+                    <span style="color: red;" *ngIf="seedsStock.errors?.['required']">
+                        Seed Stock is required
+                    </span>
+                    <span style="color: red;" *ngIf="seedsStock.errors?.['pattern']">
+                        Seed Stock is not valid
+                    </span>
+                </div>
+            </div>
+        </tr>
+        <br>
+
+        <tr>
+            <div class="form-group">
+                <label>Seeds Per Packet </label>
+                <input type="text" [(ngModel)]="s.seedsPerPacket" class="form-control" id="sseedsPerPacket"
+                    name="sseedsPerPacket" #seedsPerPacket="ngModel" placeholder="Enter Seeds Per Packet" required
+                    pattern="[0-9]+">
+                <div *ngIf="seedsPerPacket.invalid">
+                    <span style="color: red;" *ngIf="seedsPerPacket.errors?.['required']">
+                        Seeds Per Packet is required
+                    </span>
+                    <span style="color: red;" *ngIf="seedsPerPacket.errors?.['pattern']">
+                        Seed Per Packet is not valid
+                    </span>
+                </div>
+            </div>
+        </tr>
+        <br>
+
+        <tr>
+            <div class="form-group">
+                <label>Price </label>
+                <input type="text" [(ngModel)]="s.price" class="form-control" id="sprice" name="sprice" #price="ngModel"
+                    placeholder="Enter the price" required pattern="[0-9]+">
+                <div *ngIf="price.invalid">
+                    <span style="color: red;" *ngIf="price.errors?.['required']">
+                        Enter the Price
+                    </span>
+                    <span style="color: red;" *ngIf="price.errors?.['pattern']">
+                        Price is not valid
+                    </span>
+                </div>
+            </div>
+        </tr>
+        <br>
+
+        <tr>
+            <div class="form-group">
+                <label>Discount </label>
+                <input type="text" [(ngModel)]="s.discount" class="form-control" id="sdiscount" name="sdiscount"
+                    #discount="ngModel" placeholder="Enter the discount" required pattern="[0-9][0-9]">
+                <div *ngIf="discount.invalid">
+                    <span style="color: red;" *ngIf="discount.errors?.['required']">
+                        Enter the discount
+                    </span>
+                    <span style="color: red;" *ngIf="discount.errors?.['pattern']">
+                        Discount is not valid
+                    </span>
+                </div>
+            </div>
+        </tr>
+        <br>
+
+        <tr>
+            <div class="form-group">
+                <label> Image </label>
+                <input type="text" class="form-control" id="simage" name="simage" [(ngModel)]="s.image" />
+            </div>
+        </tr>
+        <br>
+
+        <tr>
+            <div class="form-group">
+                <label> About </label>
+                <input type="text" class="form-control" id="sabout" name="sabout" [(ngModel)]="s.about" />
+            </div>
+        </tr>
+        <br>
+
+        <tr>
+            <div class="form-group">
+              <label for="starRating">Number of Stars</label>
+              <div class="starRating">
+                <span class="star" [class.filled]="s.starRating >= 1" (click)="s.starRating = 1">&#9733;</span>
+                <span class="star" [class.filled]="s.starRating >= 2" (click)="s.starRating = 2">&#9733;</span>
+                <span class="star" [class.filled]="s.starRating >= 3" (click)="s.starRating = 3">&#9733;</span>
+                <span class="star" [class.filled]="s.starRating >= 4" (click)="s.starRating = 4">&#9733;</span>
+                <span class="star" [class.filled]="s.starRating >= 5" (click)="s.starRating = 5">&#9733;</span>
+              </div>
+            </div>
+          </tr>
+          <br>
+        
+        <button class="btn btn-primary" type="submit">Submit</button>
+    </form>
+</div>

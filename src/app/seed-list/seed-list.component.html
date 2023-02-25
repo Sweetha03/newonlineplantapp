@@ -1,0 +1,25 @@
+<table>
+    <tr>
+        <div *ngFor="let x of allSeeds">
+
+            <img src="/assets/image/{{x.image}}" alt="Seed image" width="150px" height="150px">
+
+            <div> Seed Id: {{x.id}} </div>
+            <div> Seed Name: {{x.seedName}} </div>
+            <div> Bloom Season: {{x.bloomSeason}} </div>
+            <div> Types of Seeds: {{x.typesOfSeeds}} </div>
+            <div> Seed Stock: {{x.seedsStock}} </div>
+            <div> Seeds Per Packet: {{x.seedsPerPacket}} </div>
+            <div> Image: {{x.image}} </div>
+            <div> About: {{x.about}} </div>
+            <div> Discount: {{x.discount}} </div>
+            <div> Rating: {{x.starRating}} </div>
+            <div> Seed Price: {{x.price}} </div><br>
+            
+            <div><button value="view"
+                    (click)="viewSeedDetails(x.id,x.seedName,x.bloomSeason,x.typesOfSeeds,x.seedsStock,x.seedsPerPacket,x.about,x.discount,x.image,x.starRating,x.price)">View
+                    Details</button></div>
+            <hr>
+        </div>
+    </tr>
+</table>
